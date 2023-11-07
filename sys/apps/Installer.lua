@@ -4,7 +4,7 @@ local http    = _G.http
 local install = _ENV.install
 local os      = _G.os
 
-local url ='https://raw.githubusercontent.com/kepler155c/opus-installer/master/sys/apis/injector.lua'
+local url ='https://raw.githubusercontent.com/Llama1412/opus-installer/main/sys/apis/injector.lua'
 local injector = load(http.get(url).readAll(), 'injector.lua', nil, _ENV)()
 
 -- install a require that only searches github
@@ -86,7 +86,7 @@ local pages = {
 
 local function getFileList()
 	if install.gitRepo then
-		local gitFiles = Git.list(string.format('%s/%s', install.gitRepo, install.gitBranch or 'master'))
+		local gitFiles = Git.list(string.format('%s/%s', install.gitRepo, install.gitBranch or 'main'))
 		install.files = { }
 		install.diskspace = 0
 		for path, entry in pairs(gitFiles) do
